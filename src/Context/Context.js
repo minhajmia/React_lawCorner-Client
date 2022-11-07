@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 
@@ -50,6 +51,10 @@ const Context = ({ children }) => {
       unsubscribe();
     };
   }, []);
+  // logOut
+  const logOut = () => {
+    return signOut(auth);
+  };
 
   const authInfo = {
     user,
@@ -59,6 +64,7 @@ const Context = ({ children }) => {
     loginUser,
     updateUserProfile,
     loading,
+    logOut,
   };
   return (
     <div>

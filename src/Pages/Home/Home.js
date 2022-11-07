@@ -1,10 +1,13 @@
 import React from "react";
+import Banner from "../../Components/Banner/Banner";
+import MyService from "../../Components/MyService/MyService";
 import "./Home.css";
 
 const Home = () => {
   return (
     <div>
-      <h2>Home</h2>
+      <Banner />
+      <MyService />
     </div>
   );
 };
