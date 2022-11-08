@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Review from "../../Components/Review/Review";
 import { AuthContext } from "../../Context/Context";
-import PrivateRoute from "./../../Router/PrivateRoute/PrivateRoute";
 
 const ViewDetails = () => {
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const { title, img, price, rating, _id, description } = service;
+
   return (
     <>
       <div className="hero  ">
@@ -22,7 +22,6 @@ const ViewDetails = () => {
           </div>
         </div>
       </div>
-      <div className="review section"></div>
       <div>
         <Review service={service} />
       </div>
