@@ -1,31 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SingleService from "../SingleService/SingleService";
 
 const MyService = () => {
+  const [limitedService, setLimitedService] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/limitedServices")
+      .then((res) => res.json())
+      .then((data) => setLimitedService(data));
+  }, []);
   return (
     <div>
       <h2 className="text-3xl text-center font-extrabold">My Service</h2>
-      <div>
-        <div className="card w-96 bg-base-100 shadow-xl my-10">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://placeimg.com/400/225/arch"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <Link to="/services" className="text-center ">
-          <button className="btn btn-primary inline-block ">See All</button>
-        </Link>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {limitedService.map((service) => (
+          <SingleService service={service} key={service._id} />
+        ))}
       </div>
+      <Link to="/services" className=" ">
+        <button className="btn btn-primary inline-block text-center">
+          See All
+        </button>
+      </Link>
     </div>
   );
 };

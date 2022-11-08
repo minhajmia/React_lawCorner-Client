@@ -4,148 +4,42 @@
         "img": "https://images.pexels.com/photos/7876093/pexels-photo-7876093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "price": "180.00",
         "description": "Have you ever watched the television show Law and Order? In the popular show, the first portion relates to a crime that was committed.This part of the show focuses on the police and detective work involved in trying to solve the crime and gather evidence to prove their case against the perpetrator of the crime. The second part of the show pertains to the legal system and shows how criminal law applies to the facts. Thus, you will see criminal law in action as it plays out in the courtroom. This program offers a very good insight into the body of criminal law.Criminal law refers to a body of laws that apply to criminal acts. In instances where an individual fails to adhere to a particular criminal statute, he or she commits a criminal act by breaking the law. This body of laws is different from civil law, because criminal law penalties involve the forfeiture of one's rights and imprisonment. Conversely, civil laws relate to the resolution of legal controversies and involve money damages.Criminal law refers to a body of laws that apply to criminal acts. In instances where an individual fails to adhere to a particular criminal statute, he or she commits a criminal act by breaking the law. This body of laws is different from civil law, because criminal law penalties involve the forfeiture of one's rights and imprisonment. Conversely, civil laws relate to the resolution of legal controversies and involve money damages. ",
-        "facility": [
-            {
-                "name": "Instant Car Services",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "24/7 Quality Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Easy Customer Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Quality Cost Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            }
-        ]
+        "rating" : "325"
     },
     {
-        "service_id": "05",
-        "title": "Battery Charge",
-        "img": "https://i.ibb.co/ydCbDN3/5555.jpg",
-        "price": "20.00",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
-        "facility": [
-            {
-                "name": "Instant Car Services",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "24/7 Quality Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Easy Customer Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Quality Cost Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            }
-        ]
+        "title": "Land Law and practice",
+        "img": "https://images.pexels.com/photos/6077447/pexels-photo-6077447.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "price": "260.00",
+        "description": "Land law is the form of law that deals with the rights to use, alienate, or exclude others from land. In many jurisdictions, these kinds of property are referred to as real estate or real property, as distinct from personal property. Land use agreements, including renting, are an important intersection of property and contract law. Encumbrance on the land rights of one, such as an easement, may constitute the land rights of another. Mineral rights and water rights are closely linked, and often interrelated concepts.Land rights are such a basic form of law that they develop even where there is no state to enforce them; for example, the claim clubs of the American West were institutions that arose organically to enforce the system of rules appurtenant to mining. Squatting, the occupation of land without ownership, is a globally ubiquitous phenomenon. ",
+        "rating" : "451"
     },
     {
-        "service_id": "01",
-        "title": "Full car Repair",
-        "img": "https://i.ibb.co/R6Z2nFM/55.jpg",
-        "price": "200.00",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
-        "facility": [
-            {
-                "name": "Instant Car Services",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "24/7 Quality Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Easy Customer Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Quality Cost Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            }
-        ]
+        "title": "Family Law and practice",
+        "img": "https://images.pexels.com/photos/4427545/pexels-photo-4427545.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "price": "660.00",
+        "description": "Family law is a legal practice area that focuses on issues involving family relationships such as marriage, adoption, divorce, and child custody, among others. Attorneys practicing family law can represent clients in family court proceedings or in related negotiations. They can also draft important legal documents such as court petitions or property agreements.Some family law attorneys even specialize in adoption, paternity, emancipation, or other matters not usually related to divorce. The matter of family encompasses so many life aspects. Lawyers in the field, therefore, help all kinds of people facing all kinds of sensitive issues that many people wouldn't immediately assume go under the family law umbrella.The following is a primer on family law and what it entails.",
+        "rating" : "751"
     },
     {
-        "service_id": "02",
-        "title": "Engine Repair",
-        "img": "https://i.ibb.co/5MvmD2g/88.jpg",
-        "price": "150.00",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
-        "facility": [
-            {
-                "name": "Instant Car Services",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "24/7 Quality Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Easy Customer Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Quality Cost Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            }
-        ]
+        "title": "Advocate-ship Enrollment",
+        "img": "https://images.pexels.com/photos/5668781/pexels-photo-5668781.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "price": "430.00",
+        "description": "A person must be enrolled in any recognized Bar Association to appear, act and plead before any Court, Tribunal or revenue authority of Bangladesh. As Rule- 06(1) states that “No person shall practiced as an Advocate unless he is a member of a Bar Association of the place at which he ordinarily practices”.When a person’s name is entered in the roll of the Bar Council s/he will be known as an Advocate (Article 2(a) of the Bangladesh Legal Practitioners and Bar Council Order, 1972). However, such enrolment is not to be confused with the membership of the Bar Council. Membership is mainly an elected position. The Bar Council consist of fifteen members and Advocates on the roll elect 7 Members of the Bar Council for a term of three years. Who will be the rest 8 members are stated in Article 5 of the Bangladesh Legal Practitioners and Bar Council Order, 1972.",
+        "rating" : "361"
     },
     {
-        "service_id": "03",
-        "title": "Automatic Services",
-        "img": "https://i.ibb.co/wh7t3N3/555.jpg",
-        "price": "30.00",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
-        "facility": [
-            {
-                "name": "Instant Car Services",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "24/7 Quality Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Easy Customer Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Quality Cost Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            }
-        ]
+        "title": "Corporate and Commercial Contact",
+        "img": "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "price": "189.00",
+        "description": "Corporate law (also known as business law, company law or enterprise law) is the body of law governing the rights, relations, and conduct of persons, companies, organizations and businesses. The term refers to the legal practice of law relating to corporations, or to the theory of corporations. Corporate law often describes the law relating to matters which derive directly from the life-cycle of a corporation.[1] It thus encompasses the formation, funding, governance, and death of a corporation.While the minute nature of corporate governance as personified by share ownership, capital market, and business culture rules differ, similar legal characteristics and legal problems exist across many jurisdictions. Corporate law regulates how corporations, investors, shareholders, directors, employees, creditors, and other stakeholders such as consumers, the community, and the environment interact with one another.[1] Whilst the term company or business law is colloquially used interchangeably with corporate law, the term business law mostly refers to wider concepts of commercial law, that is the law relating to commercial and business related purposes and activities. In some cases, this may include matters relating to corporate governance or financial law. When used as a substitute for corporate law, business law means the law relating to the business corporation (or business enterprises), including such activity as raising capital, company formation, and registration with the government.",
+        "rating" : "263"
     },
     {
-        "service_id": "06",
-        "title": "Electrical System",
-        "img": "https://i.ibb.co/KzCG8qr/8888.jpg",
-        "price": "20.00",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
-        "facility": [
-            {
-                "name": "Instant Car Services",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "24/7 Quality Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Easy Customer Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            },
-            {
-                "name": "Quality Cost Service",
-                "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
-            }
-        ]
+        "title": "Corporate legal documents",
+        "img": "https://images.pexels.com/photos/7841499/pexels-photo-7841499.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "price": "389.00",
+        "description": "Corporate law (also known as business law, company law or enterprise law) is the body of law governing the rights, relations, and conduct of persons, companies, organizations and businesses. The term refers to the legal practice of law relating to corporations, or to the theory of corporations. Corporate law often describes the law relating to matters which derive directly from the life-cycle of a corporation.[1] It thus encompasses the formation, funding, governance, and death of a corporation.While the minute nature of corporate governance as personified by share ownership, capital market, and business culture rules differ, similar legal characteristics and legal problems exist across many jurisdictions. Corporate law regulates how corporations, investors, shareholders, directors, employees, creditors, and other stakeholders such as consumers, the community, and the environment interact with one another.[1] Whilst the term company or business law is colloquially used interchangeably with corporate law, the term business law mostly refers to wider concepts of commercial law, that is the law relating to commercial and business related purposes and activities. In some cases, this may include matters relating to corporate governance or financial law. When used as a substitute for corporate law, business law means the law relating to the business corporation (or business enterprises), including such activity as raising capital, company formation, and registration with the government.",
+        "rating" : "813"
     }
+  
 ]

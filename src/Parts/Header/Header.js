@@ -42,8 +42,17 @@ const Header = () => {
         <li>
           <Link to="services">Services</Link>
         </li>
+        <li>
+          <Link to="blog">Blog</Link>
+        </li>
         {user?.uid ? (
           <>
+            <li>
+              <Link to="myReviews">MyReviews</Link>
+            </li>
+            <li>
+              <Link to="addService">AddService</Link>
+            </li>
             <li>
               <Link onClick={handleLogOut} to="login">
                 LogOut
