@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../Utilities/Images/Login.png";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/Context";
@@ -10,11 +10,14 @@ const Register = () => {
   const { signInWithGoogle, registerUser, updateUserProfile } =
     useContext(AuthContext);
   const provider = new GoogleAuthProvider();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const googleSignIn = () => {
     signInWithGoogle(provider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.error(err);
@@ -33,6 +36,8 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         userProfileUpdated(name, photoURL);
+        form.reset();
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);

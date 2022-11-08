@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import { AuthContext } from "../../Context/Context";
 
 const AddService = () => {
+  const { user } = useContext(AuthContext);
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
-    const serviceName = form.serviceName.value;
-    const servicePrice = form.servicePrice.value;
-    const servicePhotoUrl = form.servicePhotoUrl.value;
-    const serviceRatings = form.serviceRatings.value;
-    const serviceDescription = form.serviceDescription.value;
-    console.log(
-      serviceName,
-      servicePrice,
-      servicePhotoUrl,
-      serviceRatings,
-      serviceDescription
-    );
+    const title = form.serviceName.value;
+    const price = form.servicePrice.value;
+    const img = form.servicePhotoUrl.value;
+    const rating = form.serviceRatings.value;
+    const description = form.serviceDescription.value;
+    const service = {
+      title,
+      price,
+      rating,
+      description,
+      img,
+    };
+
+    fetch("http://localhost:5000/services", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(service),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          alert("Service Added Successfully !");
+          form.reset();
+        }
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <div>
