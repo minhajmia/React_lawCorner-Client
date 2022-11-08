@@ -14,7 +14,9 @@ const SingleService = ({ service }) => {
             <h2 className="card-title">{title}</h2>
             <p>{description.slice(0, 100)} ...</p>
             <div className="card-actions">
-              <button className="btn btn-primary">View Details</button>
+              <Link to={`/service/${_id}`}>
+                <button className="btn btn-primary">View Details</button>
+              </Link>
             </div>
           </div>
         </div>
