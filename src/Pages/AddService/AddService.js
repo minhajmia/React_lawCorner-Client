@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../Context/Context";
 
 const AddService = () => {
