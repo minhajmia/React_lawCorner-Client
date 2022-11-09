@@ -1,7 +1,9 @@
 import React from "react";
+import useTitle from "../../Hooks/useTitle";
 import img from "../../Utilities/Images/Blog.png";
 
 const Blog = () => {
+  useTitle("Blog");
   return (
     <div className="hero  ">
       <div className="hero-content flex-col lg:flex-row-reverse">

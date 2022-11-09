@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import UserReviewList from "../../Components/UserReviewList/UserReviewList";
 import { AuthContext } from "../../Context/Context";
+import useTitle from "../../Hooks/useTitle";
 
 const MyReviews = () => {
+  useTitle("MyReviews");
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
@@ -11,6 +13,26 @@ const MyReviews = () => {
       .then((data) => setReviews(data))
       .catch((error) => console.log(error));
   }, [user?.email]);
+
+  /// delete review
+  const handleDeleteReview = (_id) => {
+    const proceed = window.confirm("Are you sure you want to delete?");
+    if (proceed) {
+      fetch(`http://localhost:5000/reviews/${_id}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Delete successfully");
+            const remaining = reviews.filter(
+              (singleReview) => singleReview._id !== _id
+            );
+            setReviews(remaining);
+          }
+        });
+    }
+  };
   return (
     <>
       <div className="overflow-x-auto w-full">
@@ -25,10 +47,10 @@ const MyReviews = () => {
             <>
               <thead>
                 <tr>
-                  <th>User Info</th>
-                  <th>Services</th>
+                  <th> Profile</th>
+                  <th>Service Name Price</th>
                   <th>Ratings</th>
-                  <th>Review info</th>
+                  <th>Review </th>
                   <th>
                     <label>Action</label>
                   </th>
@@ -36,7 +58,11 @@ const MyReviews = () => {
               </thead>
               <tbody>
                 {reviews.map((review) => (
-                  <UserReviewList review={review} key={review._id} />
+                  <UserReviewList
+                    review={review}
+                    key={review._id}
+                    handleDeleteReview={handleDeleteReview}
+                  />
                 ))}
               </tbody>
             </>

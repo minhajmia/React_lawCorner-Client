@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Review from "../../Components/Review/Review";
 import { AuthContext } from "../../Context/Context";
@@ -7,6 +7,18 @@ const ViewDetails = () => {
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const { title, img, price, rating, _id, description } = service;
+
+  const [allReviews, setAllReviews] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews/${_id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setAllReviews(data);
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  }, [_id]);
+
   return (
     <>
       <div className="hero  ">
@@ -17,6 +29,7 @@ const ViewDetails = () => {
             <p className="py-4">Price : {price}</p>
             <p>{description}</p>
             <p className="pb-4">Ratings : {rating}</p>
+            {allReviews.length}
           </div>
         </div>
       </div>

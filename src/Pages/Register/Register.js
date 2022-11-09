@@ -5,8 +5,10 @@ import img from "../../Utilities/Images/Login.png";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/Context";
 import { GoogleAuthProvider } from "firebase/auth";
+import useTitle from "./../../Hooks/useTitle";
 
 const Register = () => {
+  useTitle("Register");
   const { signInWithGoogle, registerUser, updateUserProfile } =
     useContext(AuthContext);
   const provider = new GoogleAuthProvider();

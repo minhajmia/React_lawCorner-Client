@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
 
 const Review = ({ service }) => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -13,16 +15,11 @@ const Review = ({ service }) => {
     const review = {
       name,
       reviewerPhoto: user?.photoURL,
-      serviceImg: service?.img,
-      serviceTitle: service?.title,
-      servicePrice: service?.price,
-      reviewId: service?._id,
+      reviewId: service._id,
       rating,
       reviewInfo,
       email: user?.email || "unregistered",
     };
-
-    console.log(review.reviewId);
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -36,6 +33,7 @@ const Review = ({ service }) => {
         if (data.acknowledged) {
           alert("Review Successfully !");
           form.reset();
+          navigate("/myReviews");
         }
       })
       .catch((error) => console.log(error));

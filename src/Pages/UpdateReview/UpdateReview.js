@@ -1,30 +1,46 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateReview = () => {
   const updateReviewInfo = useLoaderData();
-  const {
-    serviceTitle,
-    reviewInfo,
-    email,
-    servicePrice,
-    name,
-    rating,
-    reviewerPhoto,
-  } = updateReviewInfo;
-
+  const { _id, reviewInfo, email, name, rating, reviewerPhoto, reviewId } =
+    updateReviewInfo;
+  const navigate = useNavigate();
+  const [updateReviewService, setUpdateReviewService] = useState({});
+  useEffect(() => {
+    fetch(`http://localhost:5000/services/${reviewId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUpdateReviewService(data);
+      });
+  }, [reviewId]);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const rating = form.rating.value;
     const reviewInfo = form.reviewInfo.value;
-    console.log(name, rating, reviewInfo);
+    const updateReview = { name, rating, reviewInfo };
+    fetch(`http://localhost:5000/reviews/${_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateReview),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert("Updated successfully");
+          navigate("/MyReviews");
+        }
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div>
       <h3 className="text-center text-4xl font-bold my-5">Edit Your Review</h3>
-      <div className="flex flex-col w-1/2 mx-auto">
+      <div className="flex flex-col w-2/3 mx-auto">
         <div className="grid card bg-base-300 rounded-box place-items-center">
           <div className="overflow-x-auto w-full">
             <table className="table w-full text-center">
@@ -39,7 +55,7 @@ const UpdateReview = () => {
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
-                        <div className="mask mask-heart w-12 h-12">
+                        <div className="mask mask-circle  w-14 h-14">
                           <img src={reviewerPhoto} alt="User photo" />
                         </div>
                       </div>
@@ -47,10 +63,10 @@ const UpdateReview = () => {
                     </div>
                   </td>
                   <td>
-                    {serviceTitle}
+                    {updateReviewService?.title}
                     <br />
                     <span className="badge badge-ghost badge-sm">
-                      $ {servicePrice}
+                      $ {updateReviewService?.price}
                     </span>
                   </td>
                 </tr>

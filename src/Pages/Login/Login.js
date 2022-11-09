@@ -4,8 +4,10 @@ import img from "../../Utilities/Images/Login.png";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/Context";
 import { GoogleAuthProvider } from "firebase/auth";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("Login");
   const { loginWithGoogle, loginUser } = useContext(AuthContext);
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
