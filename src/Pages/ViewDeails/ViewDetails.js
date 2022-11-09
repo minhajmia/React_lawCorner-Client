@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Review from "../../Components/Review/Review";
 import { AuthContext } from "../../Context/Context";
@@ -7,7 +7,6 @@ const ViewDetails = () => {
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const { title, img, price, rating, _id, description } = service;
-
   return (
     <>
       <div className="hero  ">
@@ -18,12 +17,22 @@ const ViewDetails = () => {
             <p className="py-4">Price : {price}</p>
             <p>{description}</p>
             <p className="pb-4">Ratings : {rating}</p>
-            <button className="btn btn-primary">Add to Cart</button>
           </div>
         </div>
       </div>
       <div>
-        <Review service={service} />
+        {user?.uid ? (
+          <>
+            <Review service={service} />
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              {" "}
+              <button className="btn ">Please login to add a review</button>
+            </Link>
+          </>
+        )}
       </div>
     </>
   );

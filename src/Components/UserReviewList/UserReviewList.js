@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const UserReviewList = ({ review }) => {
   const {
@@ -9,8 +10,23 @@ const UserReviewList = ({ review }) => {
     servicePrice,
     reviewInfo,
     rating,
+    reviewId,
   } = review;
-  console.log(review);
+  // delete review
+  const handleDeleteReview = (id) => {
+    fetch(`http://localhost:5000/reviews/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          alert("Delete Successfully");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+  // update review
+
   return (
     <tr>
       <td>
@@ -36,10 +52,15 @@ const UserReviewList = ({ review }) => {
         <button className="btn btn-ghost btn-xs">{reviewInfo}</button>
       </th>
       <th>
-        <label>
-          <button className="btn btn-error mr-2">Delete</button>
-          <button className="btn btn-primary">Update</button>
-        </label>
+        <button
+          className="btn mr-2"
+          onClick={() => handleDeleteReview(reviewId)}
+        >
+          Delete Review
+        </button>
+        <Link to={`/update/${reviewId}`}>
+          <button className="btn btn-primary">Edit Review</button>
+        </Link>
       </th>
     </tr>
   );

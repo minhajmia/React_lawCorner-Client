@@ -19,10 +19,10 @@ const Review = ({ service }) => {
       reviewId: service?._id,
       rating,
       reviewInfo,
-      email: user?.email,
+      email: user?.email || "unregistered",
     };
 
-    console.log(review);
+    console.log(review.reviewId);
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -51,6 +51,7 @@ const Review = ({ service }) => {
             placeholder="Your Name"
             name="name"
             className="input input-bordered input-accent w-1/3"
+            required
           />
           <br />
           <label htmlFor=""> Rating : </label>
@@ -59,12 +60,14 @@ const Review = ({ service }) => {
             placeholder="Rating"
             name="rating"
             className="input input-bordered input-accent w-1/3"
+            required
           />
           <br />
           <label htmlFor="">Review info : </label>
           <textarea
             className="textarea textarea-accent w-1/3"
             placeholder="Review info"
+            required
             name="reviewInfo"
           ></textarea>
           <input type="Submit" value="Review" className="btn " />

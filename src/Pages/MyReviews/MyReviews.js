@@ -15,22 +15,32 @@ const MyReviews = () => {
     <>
       <div className="overflow-x-auto w-full">
         <table className="table w-full text-center">
-          <thead>
-            <tr>
-              <th>User Info</th>
-              <th>Services</th>
-              <th>Ratings</th>
-              <th>Review info</th>
-              <th>
-                <label>Action</label>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {reviews.map((review) => (
-              <UserReviewList review={review} key={review._id} />
-            ))}
-          </tbody>
+          {reviews.length === 0 ? (
+            <>
+              <h2 className="text-4xl min-h-screen mt-10">
+                No reviews were added
+              </h2>
+            </>
+          ) : (
+            <>
+              <thead>
+                <tr>
+                  <th>User Info</th>
+                  <th>Services</th>
+                  <th>Ratings</th>
+                  <th>Review info</th>
+                  <th>
+                    <label>Action</label>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {reviews.map((review) => (
+                  <UserReviewList review={review} key={review._id} />
+                ))}
+              </tbody>
+            </>
+          )}
         </table>
       </div>
     </>
