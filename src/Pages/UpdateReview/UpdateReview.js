@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateReview = () => {
   const updateReviewInfo = useLoaderData();
@@ -31,7 +32,13 @@ const UpdateReview = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("Updated successfully");
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Review Updated Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           navigate("/MyReviews");
         }
       })

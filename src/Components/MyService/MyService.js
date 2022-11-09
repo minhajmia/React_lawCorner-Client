@@ -4,11 +4,17 @@ import SingleService from "../SingleService/SingleService";
 
 const MyService = () => {
   const [limitedService, setLimitedService] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch("http://localhost:5000/limitedServices")
       .then((res) => res.json())
-      .then((data) => setLimitedService(data));
+      .then((data) => {
+        setLimitedService(data);
+        setLoader(false);
+      })
+      .catch((error) => console.log(error));
   }, []);
+
   return (
     <div>
       <h2 className="text-3xl text-center font-extrabold mt-5">My Service</h2>
@@ -16,6 +22,7 @@ const MyService = () => {
         {limitedService.map((service) => (
           <SingleService service={service} key={service._id} />
         ))}
+        {loader && <progress className="progress w-56 mx-auto"></progress>}
       </div>
       <Link to="/services" className=" block text-center mb-5">
         <button className="btn  banner-btn">See All</button>

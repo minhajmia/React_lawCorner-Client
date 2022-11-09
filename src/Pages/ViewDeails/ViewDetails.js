@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Review from "../../Components/Review/Review";
+import SingleReviewer from "../../Components/SingleReviewer/SingleReviewer";
 import { AuthContext } from "../../Context/Context";
 import MyReviews from "./../MyReviews/MyReviews";
 
@@ -10,17 +11,19 @@ const ViewDetails = () => {
   const { title, img, price, rating, _id, description } = service;
 
   const [allReviews, setAllReviews] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?id=${_id}`)
       .then((response) => response.json())
       .then((data) => {
         setAllReviews(data);
+        setLoader(false);
       })
       .catch((err) => console.log(err));
   }, [_id]);
   console.log(allReviews);
   return (
-    <div className="mx-10">
+    <div className="mx-auto">
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row">
           <img src={img} className=" rounded-lg shadow-2xl mt-10" />
@@ -28,7 +31,6 @@ const ViewDetails = () => {
             <h1 className="text-3xl font-bold">{title}</h1>
             <p className="py-4">Price : $ {price}</p>
             <p className="pb-4">Ratings : {rating}</p>
-            {allReviews.length}
           </div>
         </div>
       </div>
@@ -42,6 +44,12 @@ const ViewDetails = () => {
           </div>
           <div>
             <h3 className="text-center text-1xl mt-5 font-semibold">Reviews</h3>
+            {loader && <p className="text-orange-400 text-2xl">Loading....</p>}
+            <div className=" items-center text-center justify-center grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+              {allReviews.map((singleRev) => (
+                <SingleReviewer singleRev={singleRev} key={singleRev._id} />
+              ))}
+            </div>
           </div>
         </div>
         <div className="divider"></div>

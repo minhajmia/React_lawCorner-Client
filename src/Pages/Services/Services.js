@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SingleService from "../../Components/SingleService/SingleService";
+import { AuthContext } from "../../Context/Context";
 import useTitle from "./../../Hooks/useTitle";
 
 const Services = () => {
   useTitle("Services");
   const [allServices, setAllServices] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((response) => response.json())
-      .then((data) => setAllServices(data));
+      .then((data) => {
+        setAllServices(data);
+        setLoader(false);
+      });
   }, []);
+
   return (
     <div>
       <h2 className="text-3xl font-bold text-center mt-10 ">All Services</h2>
@@ -17,6 +23,7 @@ const Services = () => {
         {allServices.map((service) => (
           <SingleService service={service} key={service._id} />
         ))}
+        {loader && <progress className="progress w-56 mx-auto"></progress>}
       </div>
     </div>
   );
