@@ -12,8 +12,8 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-5xl font-bold text-center">All Services</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <h2 className="text-3xl font-bold text-center mt-10 ">All Services</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 sm:mx-3 md:mx-5 lg:mx-10">
         {allServices.map((service) => (
           <SingleService service={service} key={service._id} />
         ))}

@@ -10,15 +10,14 @@ const ViewDetails = () => {
 
   const [allReviews, setAllReviews] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${_id}`)
+    fetch(`http://localhost:5000/reviews?id=${_id}`)
       .then((response) => response.json())
       .then((data) => {
         setAllReviews(data);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   }, [_id]);
-
+  console.log(allReviews);
   return (
     <>
       <div className="hero  ">

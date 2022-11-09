@@ -11,6 +11,7 @@ import Blog from "../../Parts/Blog/Blog";
 import PrivateRoute from "./../PrivateRoute/PrivateRoute";
 import ViewDetails from "../../Pages/ViewDeails/ViewDetails";
 import UpdateReview from "./../../Pages/UpdateReview/UpdateReview";
+import About from "../../Parts/About/About";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,7 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/reviews/${params.id}`),
       },
+      { path: "about", element: <About /> },
       { path: "*", element: <NotFound /> },
     ],
   },

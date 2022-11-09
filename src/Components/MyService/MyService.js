@@ -11,16 +11,14 @@ const MyService = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-3xl text-center font-extrabold">My Service</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <h2 className="text-3xl text-center font-extrabold mt-5">My Service</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 sm:mx-5  md:mx-10">
         {limitedService.map((service) => (
           <SingleService service={service} key={service._id} />
         ))}
       </div>
-      <Link to="/services" className=" ">
-        <button className="btn btn-primary inline-block text-center">
-          See All
-        </button>
+      <Link to="/services" className=" block text-center mb-5">
+        <button className="btn  banner-btn">See All</button>
       </Link>
     </div>
   );

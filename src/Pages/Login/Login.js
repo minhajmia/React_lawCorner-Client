@@ -40,12 +40,12 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen ">
+    <div className="hero my-10 block">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <img src={img} alt="" />
+          <img src={img} alt="" className="sm:max-w-xs md:max-w-md" />
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card max-w-md shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -72,18 +72,18 @@ const Login = () => {
               />
               <label className="label text-1xl">
                 Don't have an account ?
-                <Link to="/register" className="text-info">
+                <Link to="/register" className="text-orange-400">
                   Register
                 </Link>
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary capitalize">Login</button>
+              <button className="btn banner-btn capitalize">Login</button>
             </div>
             <div className="form-control ">
               <button
                 onClick={googleLogin}
-                className="btn btn-primary capitalize"
+                className="btn banner-btn  capitalize"
               >
                 <FaGoogle className="mr-5" />
                 Login With Google

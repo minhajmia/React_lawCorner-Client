@@ -5,7 +5,7 @@ import img from "../../Utilities/Images/Blog.png";
 const Blog = () => {
   useTitle("Blog");
   return (
-    <div className="hero  ">
+    <div className="hero my-10">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card flex-shrink-0 w-full max-w-sm ">
           <div

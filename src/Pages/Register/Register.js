@@ -54,12 +54,12 @@ const Register = () => {
     updateUserProfile(profile);
   };
   return (
-    <div className="hero min-h-screen ">
+    <div className="hero my-10 block ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <img src={img} alt="" />
+          <img src={img} alt="" className="sm:max-w-xs md:max-w-md" />
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card  shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -108,18 +108,18 @@ const Register = () => {
               />
               <label className="label text-1xl">
                 Already have an account ?
-                <Link to="/login" className="text-info">
+                <Link to="/login" className="text-info text-orange-400">
                   Login
                 </Link>
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary capitalize">SignIn</button>
+              <button className="btn banner-btn capitalize">SignIn</button>
             </div>
             <div className="form-control">
               <button
                 onClick={googleSignIn}
-                className="btn btn-primary capitalize"
+                className="btn banner-btn capitalize"
               >
                 <FaGoogle className="mr-5" />
                 Sign In With Google

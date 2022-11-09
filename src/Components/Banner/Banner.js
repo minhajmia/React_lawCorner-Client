@@ -1,21 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import banner from "../../Utilities/Images/banner.png";
+import "./Banner.css";
 
 const Banner = () => {
   return (
     <div className="hero ">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <img
-          src="https://placeimg.com/260/400/arch"
-          className="max-w-sm rounded-lg shadow-2xl"
-        />
-        <div>
-          <h1 className="text-5xl font-bold">Box Office News!</h1>
+      <div className="hero-content flex-col lg:flex-row-reverse mt-5 lg:mx-10">
+        <img src={banner} className="lg:max-h-80" />
+        <div className="text-center lg:text-left items-center">
+          <h1 className="text-3xl font-bold">Law Service by LawCorner</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            LawCorner is a individual law service provide platform . Those who
+            are about to learn the particular topic of law they are cordially
+            invited to this platform.For Learning and better practicing you can
+            explore my service.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <Link to="/services">
+            <button className="btn banner-btn ">All Services</button>
+          </Link>
         </div>
       </div>
     </div>
