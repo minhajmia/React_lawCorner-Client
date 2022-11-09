@@ -31,7 +31,7 @@ const Header = () => {
         </Link>
       </div>
       <ul
-        className={`md:flex text-center absolute md:static  items-center bg-white  w-full md:w-auto z-[100]   ${({
+        className={`md:flex text-center absolute md:static  items-center bg-white  w-full md:w-auto z-[100]  mr-5 ${({
           isActive,
         }) => (isActive ? "active" : undefined)}  ${
           toggle ? "top-10px" : "top-[-240px]"

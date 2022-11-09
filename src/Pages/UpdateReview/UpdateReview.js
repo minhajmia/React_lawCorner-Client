@@ -38,8 +38,8 @@ const UpdateReview = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div>
-      <h3 className="text-center text-4xl font-bold my-5">Edit Your Review</h3>
+    <div className="my-10">
+      <h3 className="text-center text-3xl font-bold my-5">Edit Your Review</h3>
       <div className="flex flex-col w-2/3 mx-auto">
         <div className="grid card bg-base-300 rounded-box place-items-center">
           <div className="overflow-x-auto w-full">
@@ -109,7 +109,11 @@ const UpdateReview = () => {
               name="reviewInfo"
               className="input input-bordered input-primary w-full mb-5"
             />
-            <input type="submit" value="Update Review" className="btn" />
+            <input
+              type="submit"
+              value="Update Review"
+              className="btn banner-btn"
+            />
           </form>
         </div>
       </div>

@@ -46,11 +46,14 @@ const UserReviewList = ({ review, handleDeleteReview }) => {
         <button className="btn btn-ghost btn-xs">{reviewInfo}</button>
       </th>
       <th>
-        <button className="btn mr-2" onClick={() => handleDeleteReview(_id)}>
+        <button
+          className="btn mr-2 btn-error"
+          onClick={() => handleDeleteReview(_id)}
+        >
           Delete Review
         </button>
         <Link to={`/update/${_id}`}>
-          <button className="btn btn-primary">Edit Review</button>
+          <button className="btn banner-btn">Edit Review</button>
         </Link>
       </th>
     </tr>

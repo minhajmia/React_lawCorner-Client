@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
+import Swal from "sweetalert2";
 
 const Review = ({ service }) => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -31,47 +30,80 @@ const Review = ({ service }) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Review Successfully !");
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Successfully add a review",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           form.reset();
-          navigate("/myReviews");
         }
       })
       .catch((error) => console.log(error));
   };
   return (
-    <div>
-      <h2 className="text-4xl my-5 font-bold text-center">Review</h2>
-      <div className="text-center">
-        <form onSubmit={handleReview}>
-          <label htmlFor="">Name : </label>
-          <input
-            type="text"
-            placeholder="Your Name"
-            name="name"
-            className="input input-bordered input-accent w-1/3"
-            required
-          />
-          <br />
-          <label htmlFor=""> Rating : </label>
-          <input
-            type="number"
-            placeholder="Rating"
-            name="rating"
-            className="input input-bordered input-accent w-1/3"
-            required
-          />
-          <br />
-          <label htmlFor="">Review info : </label>
-          <textarea
-            className="textarea textarea-accent w-1/3"
-            placeholder="Review info"
-            required
-            name="reviewInfo"
-          ></textarea>
-          <input type="Submit" value="Review" className="btn " />
-        </form>
+    <>
+      <div>
+        <label htmlFor="my-modal-3" className="btn banner-btn capitalize">
+          Write Review
+        </label>
+        <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box relative">
+            <label
+              htmlFor="my-modal-3"
+              className="btn btn-sm banner-btn btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <div>
+              <h2 className="text-3xl my-5 font-bold text-center">Review</h2>
+              <div className="text-center">
+                <form onSubmit={handleReview}>
+                  <div className="form-control">
+                    <label htmlFor="">Name : </label>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      name="name"
+                      className="input input-bordered  sm:w-full  md:w-1/2 lg:2/3 mx-auto"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div className="form-control">
+                    <label htmlFor=""> Rating : </label>
+                    <input
+                      type="number"
+                      placeholder="Rating"
+                      name="rating"
+                      className="input input-bordered  sm:w-full  md:w-1/2 lg:2/3 mx-auto"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div className="form-control">
+                    <label htmlFor="">Review info : </label>
+                    <textarea
+                      className="textarea textarea-bordered sm:w-full  md:w-1/2 lg:2/3 mx-auto"
+                      placeholder="Review info"
+                      required
+                      name="reviewInfo"
+                    ></textarea>
+                  </div>
+                  <input
+                    type="Submit"
+                    value="Review"
+                    className="btn banner-btn my-5"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import UserReviewList from "../../Components/UserReviewList/UserReviewList";
 import { AuthContext } from "../../Context/Context";
 import useTitle from "../../Hooks/useTitle";
+import { toast } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
   useTitle("MyReviews");
@@ -24,7 +26,13 @@ const MyReviews = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("Delete successfully");
+            Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Delete Successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
             const remaining = reviews.filter(
               (singleReview) => singleReview._id !== _id
             );

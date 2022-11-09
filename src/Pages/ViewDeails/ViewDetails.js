@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Review from "../../Components/Review/Review";
 import { AuthContext } from "../../Context/Context";
+import MyReviews from "./../MyReviews/MyReviews";
 
 const ViewDetails = () => {
   const { user } = useContext(AuthContext);
@@ -19,34 +20,51 @@ const ViewDetails = () => {
   }, [_id]);
   console.log(allReviews);
   return (
-    <>
-      <div className="hero  ">
+    <div className="mx-10">
+      <div className="hero ">
         <div className="hero-content flex-col lg:flex-row">
-          <img src={img} className=" rounded-lg shadow-2xl" />
+          <img src={img} className=" rounded-lg shadow-2xl mt-10" />
           <div>
-            <h1 className="text-4xl font-bold">{title}</h1>
-            <p className="py-4">Price : {price}</p>
-            <p>{description}</p>
+            <h1 className="text-3xl font-bold">{title}</h1>
+            <p className="py-4">Price : $ {price}</p>
             <p className="pb-4">Ratings : {rating}</p>
             {allReviews.length}
           </div>
         </div>
       </div>
-      <div>
-        {user?.uid ? (
-          <>
-            <Review service={service} />
-          </>
-        ) : (
-          <>
-            <Link to="/login">
-              {" "}
-              <button className="btn ">Please login to add a review</button>
-            </Link>
-          </>
-        )}
+      <div className="flex flex-col w-full ">
+        <div className="grid  card bg-base-100 rounded-box place-items-center mt-10">
+          <div>
+            <h2 className="text-center text-1xl mt-5 font-semibold">
+              Service Description
+            </h2>
+            <p className="p-5">{description}</p>
+          </div>
+          <div>
+            <h3 className="text-center text-1xl mt-5 font-semibold">Reviews</h3>
+          </div>
+        </div>
+        <div className="divider"></div>
+        <div className="grid  card bg-base-100 rounded-box place-items-center mb-10">
+          <div>
+            {user?.uid ? (
+              <>
+                <Review service={service} />
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  {" "}
+                  <button className="btn banner-btn capitalize">
+                    Please login to add a review
+                  </button>
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

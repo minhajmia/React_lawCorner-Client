@@ -73,7 +73,7 @@ const Login = () => {
               <label className="label text-1xl">
                 Don't have an account ?
                 <Link to="/register" className="text-orange-400">
-                  Register
+                  SignIn
                 </Link>
               </label>
             </div>

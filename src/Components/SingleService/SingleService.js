@@ -23,7 +23,7 @@ const SingleService = ({ service }) => {
             <div className="card-actions ">
               <Link to={`/service/${_id}`}>
                 <button
-                  className="btn banner-btn 
+                  className="btn banner-btn capitalize
                 "
                 >
                   View Details
