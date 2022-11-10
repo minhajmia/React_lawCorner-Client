@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import UserReviewList from "../../Components/UserReviewList/UserReviewList";
 import { AuthContext } from "../../Context/Context";
 import useTitle from "../../Hooks/useTitle";
-import { toast } from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const MyReviews = () => {
@@ -11,20 +10,21 @@ const MyReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(
+      `https://server-side-service-review.vercel.app/reviews?email=${user?.email}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setReviews(data);
         setLoader(false);
-      })
-      .catch((error) => console.log(error));
+      });
   }, [user?.email]);
 
   /// delete review
   const handleDeleteReview = (_id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${_id}`, {
+      fetch(`https://server-side-service-review.vercel.app/reviews/${_id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -47,7 +47,7 @@ const MyReviews = () => {
   };
   return (
     <>
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full min-h-screen">
         <table className="table w-full text-center">
           {reviews.length === 0 ? (
             <>
@@ -69,7 +69,7 @@ const MyReviews = () => {
                 </tr>
               </thead>
               <tbody>
-                {reviews.map((review) => (
+                {reviews?.map((review) => (
                   <UserReviewList
                     review={review}
                     key={review._id}

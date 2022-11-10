@@ -15,7 +15,7 @@ const ViewDetails = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?id=${_id}`)
+    fetch(`https://server-side-service-review.vercel.app/reviews?id=${_id}`)
       .then((response) => response.json())
       .then((data) => {
         setAllReviews(data);
@@ -23,7 +23,6 @@ const ViewDetails = () => {
       })
       .catch((err) => console.log(err));
   }, [_id]);
-  console.log(allReviews);
   return (
     <div className="mx-auto">
       <div className="hero ">

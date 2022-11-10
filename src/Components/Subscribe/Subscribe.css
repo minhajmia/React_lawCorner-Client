@@ -1,0 +1,7 @@
+.subscribe-input{
+    border-bottom: 3px solid #FF8A63;
+    border-radius: unset;
+}
+.subscribe-input:focus{
+    outline: none;
+}

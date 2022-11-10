@@ -7,7 +7,7 @@ const UserReviewList = ({ review, handleDeleteReview }) => {
   const { _id, email, reviewInfo, rating, reviewId, name } = review;
   const [serviceReview, setServiceReview] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${reviewId}`)
+    fetch(`https://server-side-service-review.vercel.app/services/${reviewId}`)
       .then((response) => response.json())
       .then((data) => {
         setServiceReview(data);

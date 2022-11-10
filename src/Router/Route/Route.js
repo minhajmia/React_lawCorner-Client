@@ -21,7 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/limitedServices"),
+        loader: () =>
+          fetch(
+            "https://server-side-service-review.vercel.app/limitedServices"
+          ),
       },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
@@ -47,15 +50,19 @@ export const router = createBrowserRouter([
         path: "service/:id",
         element: <ViewDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://server-side-service-review.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "update/:id",
         element: <UpdateReview />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://server-side-service-review.vercel.app/reviews/${params.id}`
+          ),
       },
-      { path: "about", element: <About /> },
+      { path: "about", element: <Home /> },
       { path: "*", element: <NotFound /> },
     ],
   },

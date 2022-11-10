@@ -8,7 +8,7 @@ const Services = () => {
   const [allServices, setAllServices] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://server-side-service-review.vercel.app/services")
       .then((response) => response.json())
       .then((data) => {
         setAllServices(data);
@@ -17,7 +17,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <h2 className="text-3xl font-bold text-center mt-10 ">All Services</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 sm:mx-3 md:mx-5 lg:mx-10">
         {allServices.map((service) => (

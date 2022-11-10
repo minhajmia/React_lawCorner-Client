@@ -108,7 +108,7 @@ const Register = () => {
               />
               <label className="label text-1xl">
                 Already have an account ?
-                <Link to="/login" className="text-info text-orange-400">
+                <Link to="/login" className="text-orange-500">
                   Login
                 </Link>
               </label>

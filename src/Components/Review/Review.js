@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/Context";
 import Swal from "sweetalert2";
-import useTitle from "../../Hooks/useTitle";
 
 const Review = ({ service }) => {
   const { user } = useContext(AuthContext);
@@ -21,7 +20,7 @@ const Review = ({ service }) => {
       email: user?.email || "unregistered",
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://server-side-service-review.vercel.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

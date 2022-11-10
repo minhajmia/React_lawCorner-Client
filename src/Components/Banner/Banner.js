@@ -12,9 +12,10 @@ const Banner = () => {
           <h1 className="text-3xl font-bold">Law Service by LawCorner</h1>
           <p className="py-6">
             LawCorner is a individual law service provide platform . Those who
-            are about to learn the particular topic of law they are cordially
-            invited to this platform.For Learning and better practicing you can
-            explore my service.
+            are about to learn and to get solution the particular topic of law
+            they are cordially invited to this platform.For Learning , better
+            practicing and also getting information about law,you can explore my
+            service.
           </p>
           <Link to="/services">
             <button className="btn banner-btn ">All Services</button>

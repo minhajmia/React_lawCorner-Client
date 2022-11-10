@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer footer-center  py-10 bg-base-200 rounded">
       <div className="grid grid-flow-col gap-4">
         <Link to="/about" className="link link-hover">
-          About us
+          About
         </Link>
         <Link to="/login" className="link link-hover">
           Contact
@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="www.facebook.com"
               width="24"
               height="24"
               viewBox="0 0 24 24"

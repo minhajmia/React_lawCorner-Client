@@ -11,7 +11,7 @@ const UpdateReview = () => {
   const navigate = useNavigate();
   const [updateReviewService, setUpdateReviewService] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${reviewId}`)
+    fetch(`https://server-side-service-review.vercel.app/services/${reviewId}`)
       .then((response) => response.json())
       .then((data) => {
         setUpdateReviewService(data);
@@ -24,7 +24,7 @@ const UpdateReview = () => {
     const rating = form.rating.value;
     const reviewInfo = form.reviewInfo.value;
     const updateReview = { name, rating, reviewInfo };
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://server-side-service-review.vercel.app/reviews/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
