@@ -3,9 +3,11 @@ import { Link, useLoaderData } from "react-router-dom";
 import Review from "../../Components/Review/Review";
 import SingleReviewer from "../../Components/SingleReviewer/SingleReviewer";
 import { AuthContext } from "../../Context/Context";
+import useTitle from "../../Hooks/useTitle";
 import MyReviews from "./../MyReviews/MyReviews";
 
 const ViewDetails = () => {
+  useTitle("ViewDetails");
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const { title, img, price, rating, _id, description } = service;

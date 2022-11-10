@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "./../../Hooks/useTitle";
 
 const UpdateReview = () => {
+  useTitle("MyReviews/update");
   const updateReviewInfo = useLoaderData();
   const { _id, reviewInfo, email, name, rating, reviewerPhoto, reviewId } =
     updateReviewInfo;

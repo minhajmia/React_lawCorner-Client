@@ -8,7 +8,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import useTitle from "./../../Hooks/useTitle";
 
 const Register = () => {
-  useTitle("Register");
+  useTitle("SignIn");
   const { signInWithGoogle, registerUser, updateUserProfile } =
     useContext(AuthContext);
   const provider = new GoogleAuthProvider();
