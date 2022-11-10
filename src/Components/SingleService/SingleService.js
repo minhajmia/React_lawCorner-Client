@@ -20,6 +20,9 @@ const SingleService = ({ service }) => {
           <div className="card-body items-center text-center">
             <h2 className="card-title">{title}</h2>
             <p>{description.slice(0, 100)} ...</p>
+            <p>
+              <strong>Price</strong>: $ {price}
+            </p>
             <div className="card-actions ">
               <Link to={`/service/${_id}`}>
                 <button

@@ -17,9 +17,10 @@ const Review = ({ service }) => {
       reviewId: service._id,
       rating,
       reviewInfo,
+      title: service?.title,
       email: user?.email || "unregistered",
     };
-
+    console.log(service);
     fetch("https://server-side-service-review.vercel.app/reviews", {
       method: "POST",
       headers: {

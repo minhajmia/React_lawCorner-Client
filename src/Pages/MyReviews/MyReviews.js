@@ -6,14 +6,14 @@ import Swal from "sweetalert2";
 
 const MyReviews = () => {
   useTitle("MyReviews");
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(
       `https://server-side-service-review.vercel.app/reviews?email=${user?.email}`
     )
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         setReviews(data);
         setLoader(false);
@@ -68,7 +68,7 @@ const MyReviews = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="">
                 {reviews?.map((review) => (
                   <UserReviewList
                     review={review}

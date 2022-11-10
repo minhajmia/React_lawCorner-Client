@@ -11,9 +11,9 @@ const WorkingSection = () => {
       <h2>Working With</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 items-center justify-center my-10">
         <img src={img1} alt="" className=" rounded-lgs" />
-        <img src={img2} alt="" />
-        <img src={img3} alt="" />
         <img src={img4} alt="" />
+        <img src={img3} alt="" />
+        <img src={img2} alt="" />
       </div>
     </div>
   );

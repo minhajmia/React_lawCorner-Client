@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../Utilities/Images/Login.png";
 import { FaGoogle } from "react-icons/fa";
@@ -8,6 +8,7 @@ import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
   useTitle("Login");
+  const [Error, setError] = useState("");
   const { loginWithGoogle, loginUser } = useContext(AuthContext);
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
@@ -36,7 +37,8 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        const message = error.message;
+        console.log(message);
       });
   };
   return (

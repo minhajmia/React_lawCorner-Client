@@ -12,13 +12,13 @@ const ViewDetails = () => {
   const service = useLoaderData();
   const { title, img, price, rating, _id, description } = service;
 
-  const [allReviews, setAllReviews] = useState([]);
+  const [productReview, setProductReview] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch(`https://server-side-service-review.vercel.app/reviews?id=${_id}`)
+    fetch(`https://server-side-service-review.vercel.app/userReviews?id=${_id}`)
       .then((response) => response.json())
       .then((data) => {
-        setAllReviews(data);
+        setProductReview(data);
         setLoader(false);
       })
       .catch((err) => console.log(err));
@@ -49,7 +49,7 @@ const ViewDetails = () => {
               <p className="text-orange-500 text-3xl mt-10">Loading....</p>
             )}
             <div className=" items-center text-center justify-center grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-              {allReviews.map((singleRev) => (
+              {productReview.map((singleRev) => (
                 <SingleReviewer singleRev={singleRev} key={singleRev._id} />
               ))}
             </div>
