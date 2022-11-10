@@ -9,10 +9,14 @@ const MyReviews = () => {
   useTitle("MyReviews");
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((response) => response.json())
-      .then((data) => setReviews(data))
+      .then((data) => {
+        setReviews(data);
+        setLoader(false);
+      })
       .catch((error) => console.log(error));
   }, [user?.email]);
 
@@ -72,6 +76,9 @@ const MyReviews = () => {
                     handleDeleteReview={handleDeleteReview}
                   />
                 ))}
+                {loader && (
+                  <p className="text-orange-500 text-3xl mt-10">Loading....</p>
+                )}
               </tbody>
             </>
           )}

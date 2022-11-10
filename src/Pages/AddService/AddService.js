@@ -48,7 +48,7 @@ const AddService = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className=" my-10">
+    <div className=" my-10 mx-auto">
       <h2 className="text-3xl my-5 font-bold text-center">Add service</h2>
       <div className="text-center">
         <form onSubmit={handleAddService}>

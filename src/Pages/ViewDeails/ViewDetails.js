@@ -44,7 +44,9 @@ const ViewDetails = () => {
           </div>
           <div>
             <h3 className="text-center text-1xl mt-5 font-semibold">Reviews</h3>
-            {loader && <p className="text-orange-400 text-2xl">Loading....</p>}
+            {loader && (
+              <p className="text-orange-500 text-3xl mt-10">Loading....</p>
+            )}
             <div className=" items-center text-center justify-center grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
               {allReviews.map((singleRev) => (
                 <SingleReviewer singleRev={singleRev} key={singleRev._id} />
